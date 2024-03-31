@@ -8,6 +8,7 @@ pipeline {
     }
 
     stage('run') {
+      agent any
       steps {
         sh '''mvn verify
 
@@ -36,5 +37,9 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    maven = 'maven'
+    jdk = 'JDK 21'
   }
 }
