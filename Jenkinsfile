@@ -10,8 +10,7 @@ pipeline {
     stage('run') {
       agent any
       steps {
-        sh '''mvn verify
-'''
+        sh 'mvn verify'
       }
     }
 
