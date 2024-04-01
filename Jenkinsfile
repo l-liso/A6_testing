@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  tools { 
+      maven 'maven' 
+      jdk 'JDK 21' 
+  }
   stages {
     stage('check out') {
       steps {
@@ -13,9 +17,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    maven = 'maven'
-    jdk = 'JDK 21'
   }
 }
