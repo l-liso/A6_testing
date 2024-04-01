@@ -5,17 +5,18 @@ pipeline {
       jdk 'JDK 21' 
   }
   stages {
-    stage('check out') {
+    stage('Checkout') {
       steps {
         git(url: 'https://github.com/l-liso/A6_testing.git', branch: 'master')
       }
     }
 
-    stage('run') {
+    stage('Build') {
       steps {
-        sh 'mvn verify'
+        sh 'mvn clean' 
+        sh 'mvn test' 
+        sh 'mvn verify' 
       }
     }
-
   }
 }
